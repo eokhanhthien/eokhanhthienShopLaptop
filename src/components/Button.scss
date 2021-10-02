@@ -1,0 +1,231 @@
+p {
+    color: #666;
+  }
+  //the a dung de link
+  // <div className="btn hover-right">
+  // <a href="#" data-hover="Mua ngay">Xem thêm</a>
+  // </div>
+
+  //the div dung de mua khong loading lai
+  // <div className="btn hover-right">
+  // <div  data-hover="Mua ngay">Xem thêm</div>
+  // </div>
+  .btn {
+    height: 50px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    a {
+      background: #4527A0;
+      color: #fff;
+      font: bold 14px/50px Arial;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      width: 200px;
+      height: 50px;
+      position: relative;
+      top: 0;
+      transition: 250ms top, 350ms left;
+      &:before {
+        content: attr(data-hover);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: #3B7CD6;  //Cho nay
+        height: 50px;
+      }
+      &:hover {
+        top: -50px;
+      }
+    }
+  
+    &.hover-top {
+      a {
+        background: #0D47A1;
+        &:hover {
+          top: 50px;
+        }
+        &:before {
+          top: -50px;
+        }
+      }
+    }
+    &.hover-right {
+      a {
+        background: #2E7D32;
+        left: 0;
+        &:hover {
+          top: 0;
+          left: -200px;
+        }
+        &:before {
+          top: 0;
+          left: 200px;
+        }
+      }
+    }
+    &.hover-left {
+      a {
+        background: #AD1457;
+        left: 0;
+        &:hover {
+          top: 0;
+          left: 200px;
+        }
+        &:before {
+          top: 0;
+          left: -200px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    height: 50px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    div {
+      background: #4527A0;
+      color: #fff;
+      font: bold 14px/50px Arial;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      width: 200px;
+      height: 50px;
+      position: relative;
+      top: 0;
+      transition: 250ms top, 350ms left;
+      &:before {
+        content: attr(data-hover);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background:  #3B7CD6;  //Cho nay
+        height: 50px;
+      }
+      &:hover {
+        top: -50px;
+      }
+    }
+    &.hover-top {
+      div {
+        background: #0D47A1;
+        &:hover {
+          top: 50px;
+        }
+        &:before {
+          top: -50px;
+        }
+      }
+    }
+    &.hover-right {
+      div {
+        background: #2E7D32;
+        left: 0;
+        &:hover {
+          top: 0;
+          left: -200px;
+        }
+        &:before {
+          top: 0;
+          left: 200px;
+        }
+      }
+    }
+    &.hover-left {
+      div {
+        background: #AD1457;
+        left: 0;
+        &:hover {
+          top: 0;
+          left: 200px;
+        }
+        &:before {
+          top: 0;
+          left: -200px;
+        }
+      }
+    }
+  }
+
+
+  // Loading button
+
+  // <button class="action-btn" id="login-btn">Login</button>
+  .action-btn {
+    // background-color: #FF7F00;
+    // border: none;
+    // font-size: 20px;
+    // font-weight: 600;
+    // text-transform: uppercase;
+    // padding: 0.5em 1.25em;
+    // color: white;
+    // border-radius: 0.15em;
+    //  display: block;
+    // cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+   
+  }
+  
+  .action-btn:hover {
+    background-color: #ff6600;
+  }
+  
+  .action-btn:focus {
+    outline: 0.05em dashed #ff6600; 
+    outline-offset: 0.05em;
+  }
+  
+  .action-btn::after {
+    content: '';
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+    position: absolute;
+    left: calc(50% - 0.75em);
+    top: calc(50% - 0.75em);
+    border: 0.15em solid transparent;
+    border-right-color: white;
+    border-radius: 50%;
+    animation: button-anim 0.7s linear infinite;
+    opacity: 0;
+    left: 10%;
+  }
+  
+  @keyframes button-anim {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .action-btn.loading {
+    color: transparent;
+  }
+  
+  .action-btn.loading::after {
+    opacity: 1;
+  }
+  
+  // js
+
+  // loadingbtn  = () => {
+  //   const loginBtn = document.getElementById("login-btn");
+    
+  //   loginBtn.addEventListener('click', () => {
+  //     // Show loader on button click
+  //     loginBtn.classList.add("loading");
+  //     // Hide loader after success/failure - here it will hide after 2seconds
+  //     setTimeout(() => loginBtn.classList.remove("loading"), 600);
+  //   });
+  //   }
+
+  // Loading button end

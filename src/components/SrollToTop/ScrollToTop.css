@@ -1,0 +1,19 @@
+.move_up_to_top {
+    position: fixed;
+    bottom: 30px;
+    right: 0;
+    height: 55px;
+    width: 55px;
+    z-index: 50;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: #3B7CD6;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+}
+.icon_on_top{
+    font-size: 42px;
+    transition: 0.4s;
+}

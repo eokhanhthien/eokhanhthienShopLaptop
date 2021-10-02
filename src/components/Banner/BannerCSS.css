@@ -1,0 +1,122 @@
+
+.Slider {
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 120px;
+}
+
+.Slider_imagetransiton {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: 0.5s;
+  animation: zoomimg 8s infinite;
+  filter: brightness(0.8);
+}
+
+.Slider_image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.Slider_imagetransiton img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  transition: 0.5s;
+}
+
+@keyframes zoomimg {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.1);
+  }
+}
+
+.btnSlider{
+  position: absolute;
+  z-index: 5;
+  position: absolute;
+  font-size: 56px;
+  top: 40%;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btnSlider:hover{
+  color: #47d0ff;
+}
+.sliderNext{
+  right: 0;
+}
+
+.dot{
+  z-index: 5;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  margin: 0 10px;
+  
+}
+
+.dot_ac{
+  background-color: #47d0ff !important;
+}
+.dot_container{
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.activebn{
+opacity: 1;
+}
+
+.nextbn{
+opacity: 0;
+}
+
+.prevbn{
+opacity: 0;
+}
+
+
+
+.Slider_text{
+  top: 35%;
+  position: absolute;
+  color: #47d0ff;
+  font-size: 54px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+}
+
+.Slider_image_text {
+    position: absolute;
+    top: 55%;
+    left: 8%;
+    color: rgb(255, 255, 255);
+    z-index: 15;
+    font-size: 50px;
+}
+
+.Slider_image p{
+    position: absolute;
+    margin-top: 30px;
+    left: 8%;
+    color: rgb(255, 255, 255);
+    font-size: 24px !important;
+    z-index: 15;
+    font-size: 24px;
+    font-weight: 500;
+}
