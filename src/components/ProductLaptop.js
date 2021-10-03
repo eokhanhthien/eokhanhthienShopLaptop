@@ -104,17 +104,7 @@ ShowProduct  = (thamchieu) => {
       sort:e.target.value
     },()=>{
       this.Changepage(1)
-      // axios.get(`/api/get-laptop?page=${1}&limit=${this.state.view}&sort=${this.state.sort}`) //call lại phân trang 
-      // .then(data=>{
-      //   // console.log(data.resultLaptops)
-      //   this.setState({
-      //     pageLaptops:data.resultLaptops,
-      //     currentPage:1,
-      //   });
-      // })
-      // .catch(err=>{
-      //   console.log(err)
-      // })
+
     });
     
   }
