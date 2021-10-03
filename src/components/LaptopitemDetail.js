@@ -188,15 +188,14 @@ this.props.products.arrayProduct.map((item,index)=>{
                   <img src={"." + item.detailImage2} alt="" />
                 </div>
                 </div>
-
                
               </div>
 
-
           </div>  
-          {/* <div class="fb-comments" data-href="https://www.facebook.com/thien.eokhanh/posts/508147017115277" data-width="" data-numposts="5"></div> */}
 
-          <div className="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="1200" data-numposts="5"></div>        
+         
+          <div class="fb-comments" data-href="https://www.facebook.com/ShopeeVN/" data-width="100%" data-numposts="5"></div>
+
           </div>
         )
       }

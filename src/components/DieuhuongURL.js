@@ -18,6 +18,7 @@ import ProductCart from './ProductCart';
 import CartContainer from '../containers/CartContainer';
 import LaptopDetail from '../containers/LaptopDetail';
 import NewsTech from './NewsTech';
+import Login from './Auth/Login';
 
 class DieuhuongURL extends Component {
     render() {
@@ -33,6 +34,7 @@ class DieuhuongURL extends Component {
                 <Route exact path="/LaptopitemDetail/:slug.:id.html" component={LaptopDetail} />
                 <Route exact path="/CartContainer" component={CartContainer} />
                 <Route exact path="/Technews" component={NewsTech} />
+                <Route exact path="/Login" component={Login} />
             </Switch>
             </AnimatePresence>
         );
