@@ -120,7 +120,7 @@ onDelete  = (item) => {
               </NavLink>
               <div className="icon_quantity_user"><i className="fas fa-user-circle icon_user"></i>
                 <div className="user_option">
-                    <div className="user_option_item">Đăng nhập <i className="fas fa-sign-in"></i></div>
+                <NavLink  to="/Login"  className="user_option_item">Đăng nhập <i className="fas fa-sign-in"></i></NavLink>
                     <div className="user_option_item">Đăng ký</div>
                 </div>
               </div>

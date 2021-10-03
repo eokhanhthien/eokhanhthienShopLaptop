@@ -109,7 +109,7 @@ class Home extends Component {
               <h2>CLOUD DEVELOPMENT</h2>
               <p>We can also offer you reliable cloud development solutions.</p>
               <i className="fas fa-box-open home_options_icon faa-shake animated fa-4x"></i>
-              </div>
+              </div> 
               </div>
 
 
