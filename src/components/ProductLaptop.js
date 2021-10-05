@@ -8,6 +8,7 @@ import Pagination from "./Pagination";
 import Filter from "./Filter";
 import axios from "../axios";
 import Loading from "./Loading/Loading"
+import ButtonPage from "./ButtonPage/ButtonPage";
 class ProductLaptop extends Component {
   constructor(props) {
     super(props);
@@ -171,13 +172,15 @@ ShowProduct  = (thamchieu) => {
           
         { (this.state.tempSearch === "")?
          <div className="row Btb_pagination">
-         {
-           this.state.arr.map((element)=>{
-            return(
-              <button onClick={() => this.Changepage(element)} key={element} className={this.state.currentPage===element?"Btb_pagination_item pagecurent" : "Btb_pagination_item"}>{element}</button>
-            )
-          })
-         }
+
+         < ButtonPage 
+         numberbtn={this.state.arr}
+         currentPage={this.state.currentPage}
+         Changepage={this.Changepage}
+         total = {this.state.total}
+          view ={ this.state.view}
+         ></ButtonPage>
+
        </div>: null} 
 
 

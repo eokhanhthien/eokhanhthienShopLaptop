@@ -194,7 +194,7 @@ this.props.products.arrayProduct.map((item,index)=>{
           </div>  
 
          
-          <div class="fb-comments" data-href="https://www.facebook.com/ShopeeVN/" data-width="100%" data-numposts="5"></div>
+          <div className="fb-comments" data-href="https://www.facebook.com/ShopeeVN/" data-width="100%" data-numposts="5"></div>
 
           </div>
         )

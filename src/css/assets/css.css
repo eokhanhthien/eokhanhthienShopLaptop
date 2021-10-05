@@ -22,7 +22,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 50;
+    z-index: 90;
 }
 .Header_left_image {
     height: 50px;
@@ -171,6 +171,7 @@ opacity: 0.9;
     cursor: pointer;
     overflow: hidden;
     transition: 0.5s;
+    position: relative;
 }
 
 .Laptop_item:hover{
@@ -425,6 +426,12 @@ button.btn_pay {
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.Header_right_cartmini::-webkit-scrollbar {     
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+
 .Header_right_cartmini_item{
     border-bottom: 1px solid rgba(170, 170, 170,0.5);
     cursor: pointer;
@@ -552,6 +559,25 @@ i.fas.fa-shopping-cart.icon_cart2 {
     opacity: 1;
 }
 
+.Laptop_item:hover .btn_favorite_product{
+    transform: translateX(134px);
+    opacity: 1;
+}
+
+
+.btn_favorite_product {
+    position: absolute;
+    transform: translateY(88px);
+    font-size: 34px;
+    bottom: 4px;
+    transform: translateX(190px);
+    opacity: 0;
+    transition: 0.4s; 
+    color: rgb(233, 40, 40);
+}
+
+
+
 .Toastify{
     line-height: 28px;
 }
@@ -621,7 +647,7 @@ i.fas.fa-shopping-cart.icon_cart2 {
 .mgh{
     margin: 32px 140px 32px 140px;
 }
-.Btb_pagination{
+/* .Btb_pagination{
     justify-content: center;
     margin: 20px 0;
 }
@@ -638,7 +664,7 @@ button.Btb_pagination_item {
 .Btb_pagination_item.pagecurent{
     background-color: dodgerblue;
     color: white;
-}
+} */
 
 .home_options{
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
@@ -771,4 +797,5 @@ font-size: 18px;
     font-size: 19px;
     margin: 12px 0px;
 }
+
 

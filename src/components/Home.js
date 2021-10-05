@@ -14,6 +14,7 @@ import {
   BrowserRouter as Router,
   NavLink
 } from "react-router-dom";
+import BannerAuto from "./BannerAuto/BannerAuto";
 
 
 class Home extends Component {
@@ -199,7 +200,7 @@ class Home extends Component {
 
   <ShowImage></ShowImage>
       </div>
-      
+      {/* <BannerAuto></BannerAuto> */}
       </div>
       
     );

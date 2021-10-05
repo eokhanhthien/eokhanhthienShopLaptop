@@ -15,6 +15,7 @@ import DieuhuongURL from "./components/DieuhuongURL";
 import {AnimatePresence,motion } from "framer-motion"
 import HeaderContainer from "./containers/HeaderContainer";
 import ScrollToTop from "./components/SrollToTop/ScrollToTop";
+import Modalfavorite from "./components/Modalfavorite";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
     <Router>
     {/* <Header></Header> */}
     <HeaderContainer></HeaderContainer>
+    <Modalfavorite></Modalfavorite>
     <ScrollToTop scrollStepInPx="24" delayInMs="0"></ScrollToTop>
     <DieuhuongURL></DieuhuongURL>
     </Router>

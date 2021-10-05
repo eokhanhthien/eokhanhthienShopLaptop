@@ -3,6 +3,7 @@ import {AnimatePresence,motion } from "framer-motion"
 
 import { ToastContainer, toast } from 'react-toastify';  //NOTIFY
 import 'react-toastify/dist/ReactToastify.css';  //NOTIFY
+import { actGetFavoriteProduct } from '../actions';
 
 import {
   BrowserRouter as Router,
@@ -11,6 +12,7 @@ import {
   Link,
   NavLink
 } from "react-router-dom";
+import { connect } from 'react-redux';
 
 toast.configure();  //NOTIFY
 
@@ -92,7 +94,10 @@ class   Laptopitem extends Component {
                             <div>SSD: {item.detailStorage}</div>
                             <div>HĐH: {item.detailOs}</div>
                         </div>
-              </Link>
+                       
+              </Link> 
+              <div className="btn_favorite_product" onClick={() => this.props.getFavoriteProduct(item)}><i className="fab fa-gratipay" /></div>
+
               <h4 className="text_name_height">{item.name}</h4>
               <p>{(item.price).toLocaleString()} đ</p>  
               <button className="btn_add_to_cart" onClick={() => {this.onAddToCart(item);this.notify()}}>Thêm vào giỏ</button>
@@ -102,4 +107,12 @@ class   Laptopitem extends Component {
     }
 }
 
-export default Laptopitem;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    getFavoriteProduct: (item) => {
+      dispatch(actGetFavoriteProduct(item,1))
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Laptopitem)

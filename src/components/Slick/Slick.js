@@ -202,7 +202,7 @@ class Slick extends Component {
             if(that.options.dots) {  // инициализация индикаторных точек
                 let sum = '', diffNum;
                 for(let i=0; i<that.dotsVisible; i++) {
-                    sum += '<span class="ant-dot"></span>'
+                    sum += '<span className="ant-dot"></span>'
                 };
                 that.indicatorDots.innerHTML = sum;
                 that.indicatorDotsAll = that.crslRoot.querySelectorAll('span.ant-dot');

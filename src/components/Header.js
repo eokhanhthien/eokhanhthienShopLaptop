@@ -9,6 +9,7 @@ import {
 
   import { ToastContainer, toast } from 'react-toastify';  //NOTIFY
   import 'react-toastify/dist/ReactToastify.css';  //NOTIFY
+
   import "./Shake.css"
   toast.configure();  //NOTIFY
 class Header extends Component {
@@ -71,10 +72,14 @@ onDelete  = (item) => {
     
   }
 
+  onShowModalFavorite  = () => {
+    this.props.onShowModalFavorite();
+  }
   render() {
     
     return (
       <div className="Header">
+
         <div className="grid wide">
           <div className="row Header_container">
             <div className="Header_left col l-6">
@@ -118,6 +123,8 @@ onDelete  = (item) => {
               <NavLink  to="/CartContainer" >
                 <div className="icon_quantity"><i className="fas fa-shopping-cart icon_cart faa-wrench animated-hover" /> <p><span>{this.Sumproduct(this.props.cart)}</span></p></div>
               </NavLink>
+              <div className="icon_quantity_user" onClick={() => this.onShowModalFavorite()}><i className="fad fa-heart-circle icon_user"></i></div>
+
               <div className="icon_quantity_user"><i className="fas fa-user-circle icon_user"></i>
                 <div className="user_option">
                 <NavLink  to="/Login"  className="user_option_item">Đăng nhập <i className="fas fa-sign-in"></i></NavLink>
@@ -171,6 +178,7 @@ onDelete  = (item) => {
             </div>
           </div>
         </div>
+
       </div>
     );
   }

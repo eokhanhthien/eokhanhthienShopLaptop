@@ -70,11 +70,11 @@ function InitializeCards() {
   carousels.innerHTML = cards
     .map(card => {
       return `
-    <div class="card">
-      <img class="card-image" src="${card.image}" alt="${card.title}" />
-      <div class="card-bottom">
-        <div class="card-title">${card.title}</div>
-        <div class="card-subtitle">${card.subtitle}</div>
+    <div className="card">
+      <img className="card-image" src="${card.image}" alt="${card.title}" />
+      <div className="card-bottom">
+        <div className="card-title">${card.title}</div>
+        <div className="card-subtitle">${card.subtitle}</div>
       </div>
     </div>
     `;

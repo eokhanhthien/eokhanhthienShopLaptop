@@ -1,0 +1,19 @@
+.Btb_pagination{
+    justify-content: center;
+    margin: 20px 0;
+}
+.Btb_pagination_item {
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.Btb_pagination_item.pagecurent{
+    background-color: dodgerblue;
+    color: white;
+}

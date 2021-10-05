@@ -37,3 +37,25 @@ export const actGetDBLaptop = (product) => {
     }
 }
 
+
+export const actGetFavoriteProduct = (product,quantity) => {
+    return {
+        type : Types.GET_FAVORITE_PRODUCT,  
+        product,
+        quantity,
+    }
+}
+
+export const actShowmodalFavorite = () => {
+    return {
+        type : Types.SHOW_MODAL_FAVORITE,  
+    }
+}
+
+
+export const actDeleteFavoriteProduct  = (product) => {
+    return{
+        type: Types.DELETE_FAVORITE_PRODUCT,
+        product
+    }
+}
