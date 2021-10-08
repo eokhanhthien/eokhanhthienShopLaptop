@@ -18,7 +18,8 @@ toast.configure();  //NOTIFY
 
 class   Laptopitem extends Component {
   
-  notify = () => toast.success("Thêm sản phẩm vào giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT}); //NOTIFY
+  notify = () => toast.success("Thêm sản phẩm vào giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT, theme: "colored" }); //NOTIFY
+  notifyFavorite = () => toast.success("Thêm 1 sản phẩm yêu thích!",{position: toast.POSITION.TOP_RIGHT, theme: "colored" , background: "red"}); //NOTIFY
 
   onAddToCart  = (item) => {
       this.props.onAddToCart(item)
@@ -96,7 +97,7 @@ class   Laptopitem extends Component {
                         </div>
                        
               </Link> 
-              <div className="btn_favorite_product" onClick={() => this.props.getFavoriteProduct(item)}><i className="fab fa-gratipay" /></div>
+              <div className="btn_favorite_product" onClick={() => {this.props.getFavoriteProduct(item); this.notifyFavorite()}}><i className="fab fa-gratipay" /></div>
 
               <h4 className="text_name_height">{item.name}</h4>
               <p>{(item.price).toLocaleString()} đ</p>  

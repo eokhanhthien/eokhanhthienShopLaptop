@@ -15,7 +15,7 @@ class CartItem extends Component {
     }
   }
   
-  notify_delete = () => toast.info("Xóa sản phẩm khỏi giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT}); //NOTIFY
+  notify_delete = () => toast.info("Xóa sản phẩm khỏi giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT, theme: "colored" }); //NOTIFY
 
   showSubTotal  = (price, quantity) => {
     return price*quantity;

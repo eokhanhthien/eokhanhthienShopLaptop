@@ -13,7 +13,7 @@ import {
   import "./Shake.css"
   toast.configure();  //NOTIFY
 class Header extends Component {
-  notify_delete = () => toast.info("Xóa sản phẩm khỏi giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT}); //NOTIFY
+  notify_delete = () => toast.info("Xóa sản phẩm khỏi giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT, theme: "colored" }); //NOTIFY
 
 
 //Hàm đếm số lượng sản phẩm
@@ -121,7 +121,7 @@ onDelete  = (item) => {
 
             </div>
               <NavLink  to="/CartContainer" >
-                <div className="icon_quantity"><i className="fas fa-shopping-cart icon_cart faa-wrench animated-hover" /> <p><span>{this.Sumproduct(this.props.cart)}</span></p></div>
+                <div  className="icon_quantity"><i className="fas fa-shopping-cart icon_cart faa-wrench animated-hover" /> <p><span>{this.Sumproduct(this.props.cart)}</span></p></div>
               </NavLink>
               <div className="icon_quantity_user" onClick={() => this.onShowModalFavorite()}><i className="fad fa-heart-circle icon_user"></i></div>
 

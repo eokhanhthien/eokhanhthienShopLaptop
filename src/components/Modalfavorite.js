@@ -17,7 +17,7 @@ class Modalfavorite extends Component {
       <div key ={index} className="row Modal_favorite_item">
     <div className="col l-3">
     <div className="favorite_img">
-        <img src={item.product.image} />
+        <img src={"."+item.product.image} />
       </div>
     </div>
     <div className="col l-5"><p>{item.product.name}</p></div>
@@ -37,43 +37,44 @@ class Modalfavorite extends Component {
     render() {
         const pageTransition = {
             hidden: {
+              x:"400px",
               opacity: 0,
             },
             visible: {
+              x:"0px",
               opacity: 1,
               transition: { duration: 0.4},
             },
-            exit: {
-              opacity: 0,
-            },
+  
           };
 
           // console.log(this.props.favorite[1].product)
 console.log(this.props.favorite.length)
-        if(this.props.showModal.isShowFavorite){
+        // if(this.props.showModal.isShowFavorite){
         return (
-            <motion.div
+          <AnimatePresence exitBeforeEnter>
+        {   this.props.showModal.isShowFavorite && <motion.div
         variants={pageTransition}
         initial="hidden"
         animate="visible"
-        exit="exit" 
+        exit="hidden" 
+
         className="Modal_favorite">
           <div className="Modal_favorite_fixedtop">
             <div className="Modal_favorite_icon_close" onClick={() => this.props.onShowModalFavorite()}><i className="fal fa-times-hexagon" /></div>
             <div className="Modal_favorite_title" > <i className="fab fa-gratipay" /> YÊU THÍCH</div>
             </div>
-            <div className="Modal_favorite_product_mt">
-
+            
             {this.showProductFavorite()}
             
-           </div>
-          </motion.div>
-          
+           
+          </motion.div>}
+          </AnimatePresence>
         );
     }
-        else{return null}
+        // else{return null}
 }
-}
+// }
 
 const mapStateToProps = (state, ownProps) => {
     return {

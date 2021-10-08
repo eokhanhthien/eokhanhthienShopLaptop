@@ -18,7 +18,7 @@ class LaptopitemDetail extends Component {
     this.props.onAddToCart(item)
     this.notify();
   }
-  notify = () => toast.success("Thêm sản phẩm vào giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT}); //NOTIFY
+  notify = () => toast.success("Thêm sản phẩm vào giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT,theme: "colored" }); //NOTIFY
   
   initFacebookSDK  = () => {
     if(window.FB){

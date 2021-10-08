@@ -20,10 +20,11 @@
   }
 
   .Modal_favorite_fixedtop {
-    position: fixed;
+    position: sticky;
     background-color: white;
-    height: 12%;
+    height: 19%;
     width: inherit;
+    top: 0px;
 }
 
   .favorite_img img {
@@ -41,6 +42,10 @@
     cursor: pointer;
 
 }
+
+i.fal.fa-times-hexagon {
+  margin-top: 16px;
+}
 .Modal_favorite_title{
   margin: 0 0 20px 0;
   color: red;
@@ -52,9 +57,7 @@
     cursor: pointer;
     color: cornflowerblue;
 }
-.Modal_favorite_product_mt {
-  margin-top: 110px;
-}
+
  /*--------------------------------------------------- An thanh scroll---------------------------------------------------------- */
 .Modal_favorite::-webkit-scrollbar {     
   width: 0px;  /* Remove scrollbar space */
