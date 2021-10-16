@@ -59,3 +59,12 @@ export const actDeleteFavoriteProduct  = (product) => {
         product
     }
 }
+
+
+
+export const actAccFacebook  = (info) => {
+    return{
+        type: Types.GET_ACC_FACEBOOK,
+        info
+    }
+}

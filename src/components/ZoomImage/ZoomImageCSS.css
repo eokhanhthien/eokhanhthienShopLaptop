@@ -9,7 +9,7 @@
 #img-1 {
   width: 340px;
   height: 340px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #img-zoomer-box:hover, #img-zoomer-box:active {

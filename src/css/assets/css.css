@@ -26,12 +26,14 @@ body{
 }
 .Header_left_image {
     height: 50px;
-    width: 216px;
-    padding: 14px 0;
+    width: 150px;
+    padding: 5px 0;
 }
 
 .Header_left_img {
     width: 100%;
+    border-radius:68% 32% 66% 34% / 0% 100% 0% 100%;
+
 }
 .Header_right{
     font-size: 18px;
@@ -190,7 +192,7 @@ opacity: 0.9;
 .Laptop_item_img img{
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 
@@ -364,16 +366,40 @@ button.btn_pay {
     display: inline-block;
     position: relative;
 }
+
+.img_user_info:hover .user_info_option,
 .icon_quantity_user:hover .user_option{
     transform: translateY(0px);
     opacity: 1;
     visibility:visible;
 }
+
+
+
 .icon_user{
     font-size: 32px;
     margin: 0 0 0 24px;
     cursor: pointer; 
 }
+.user_info_option{
+    position: absolute;
+    z-index: 5;
+    color: black;
+    width: 240px !important;
+    background-color: rgb(255, 255, 255);
+    text-align: start;
+    padding: 10px;
+    line-height: 50px;
+    border-radius: 4px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility:hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 
 .user_option{
     position: absolute;
@@ -401,6 +427,14 @@ button.btn_pay {
     padding: 3px;
     border-radius: 50%;
     color: blue;
+}
+
+.img_user_info{
+    display: inline-block;
+    height: 50px;
+    padding: 0px 0px 0 0;
+    margin: 0 0 0 14px;
+    cursor: pointer;
 }
 
 .icon_quantity p {
@@ -554,6 +588,7 @@ i.fas.fa-shopping-cart.icon_cart2 {
 }
 
 
+
 .Laptop_item:hover .Laptop_product_info{
     transform: translateY(-184px);
     opacity: 1;
@@ -573,9 +608,14 @@ i.fas.fa-shopping-cart.icon_cart2 {
     transform: translateX(190px);
     opacity: 0;
     transition: 0.4s; 
-    color: rgb(233, 40, 40);
+    color: #3B7CD6;
+
 }
 
+.btn_favorite_product:hover{    
+    color: rgb(233, 40, 40);
+
+}
 
 
 .Toastify{
@@ -744,6 +784,7 @@ img.img_cart_empty {
 }   
 .text_name_height{
     height: 37.5px;
+    font-weight: 500;
 }
 
 /* phan work mui ten start*/
@@ -799,4 +840,4 @@ font-size: 18px;
 }
 
 
-/* --------------------------tooltips------------------------------- */
+

@@ -1,7 +1,7 @@
 .move_up_to_top {
     position: fixed;
     bottom: 30px;
-    right: 0;
+    right: 10px;
     height: 55px;
     width: 55px;
     z-index: 50;

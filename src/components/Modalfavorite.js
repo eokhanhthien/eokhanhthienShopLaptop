@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { AnimatePresence, motion } from "framer-motion";
-import { actShowmodalFavorite ,actDeleteFavoriteProduct} from '../actions';
+import { actShowmodalFavorite ,actDeleteFavoriteProduct,actAddToCart} from '../actions';
 
-
+import { toast } from "react-toastify";
 import "./Modalfavorite.css"
 
 class Modalfavorite extends Component {
+
+  notify = () => toast.success("Thêm sản phẩm vào giỏ hàng thành công!",{position: toast.POSITION.TOP_RIGHT,theme: "colored" }); //NOTIFY
   
   showProductFavorite  = () => {
     let result="";
@@ -21,14 +23,14 @@ class Modalfavorite extends Component {
       </div>
     </div>
     <div className="col l-5"><p>{item.product.name}</p></div>
-    <div className="col l-2"><i className="fas fa-cart-plus icon_add_cart" /></div>
+    <div className="col l-2" onClick={() => [this.props.onAddToCart(item.product),this.notify()]}><i className="fas fa-cart-plus icon_add_cart" /></div>
     <div className="col l-2" onClick={() => this.props.onDeleteFavorite(item.product)}><i className="fal fa-trash-alt icon_add_cart"></i></div>
   </div>
       )
     })
    }
    else {
-    result = <div ><img className="img_cart_empty" src="./image/nofavorite.png"/> <div className="text_img_cart_empty">Chưa có sản phẩm yêu thích</div></div>
+    result = <div ><img className="img_cart_empty" src="../image/nofavorite.png"/> <div className="text_img_cart_empty">Chưa có sản phẩm yêu thích</div></div>
    }
    return result
 
@@ -49,7 +51,7 @@ class Modalfavorite extends Component {
           };
 
           // console.log(this.props.favorite[1].product)
-console.log(this.props.favorite.length)
+// console.log(this.props.favorite.length)
         // if(this.props.showModal.isShowFavorite){
         return (
           <AnimatePresence exitBeforeEnter>
@@ -91,6 +93,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onDeleteFavorite: (item) => {
           dispatch(actDeleteFavoriteProduct(item))
       }, 
+      onAddToCart: (item)=>{
+        dispatch(actAddToCart(item,1))
+      },
     }
 }
 

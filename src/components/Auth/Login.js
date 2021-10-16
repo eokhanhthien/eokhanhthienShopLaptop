@@ -6,8 +6,8 @@ class Login extends Component {
     render() {
         return (
             <div className="Login_container">
-                {/* dang nhap */}
-                {/* <Facebook></Facebook> */}
+                <h2>Đăng nhập bằng facebook</h2>
+                <Facebook></Facebook>
             </div>
         );
     }

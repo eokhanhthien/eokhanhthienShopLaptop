@@ -598,7 +598,9 @@
 
 
 @media (max-width: 1239px) {
+    .btn_favorite_product,
     .Laptop_product_info{
         display: none;
     }
+
 }

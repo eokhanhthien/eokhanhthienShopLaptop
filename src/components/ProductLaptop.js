@@ -9,6 +9,7 @@ import Filter from "./Filter";
 import axios from "../axios";
 import Loading from "./Loading/Loading"
 import ButtonPage from "./ButtonPage/ButtonPage";
+import Filter_hang from "./Filter_hang";
 class ProductLaptop extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +17,8 @@ class ProductLaptop extends Component {
 
       tempSearch:"",
       sort:"default",
+      tenhang:"all",
+
 
       pageLaptops:[],
       total:0,
@@ -32,7 +35,7 @@ class ProductLaptop extends Component {
 //Gọi dữ liệu từ API
   async componentDidMount(){
     window.scrollTo(0, 0);
-    let Laptops= await GetAllLaptops(this.state.currentPage,this.state.view,this.state.sort);
+    let Laptops= await GetAllLaptops(this.state.currentPage,this.state.view,this.state.sort,this.state.tenhang);
     if(Laptops && Laptops.errCode===0){
       this.setState({
         // arrLaptops: response.users,
@@ -82,7 +85,7 @@ ShowProduct  = (thamchieu) => {
     }
     
     else{
-      let Laptops= await GetAllLaptops(1,18,this.state.sort);
+      let Laptops= await GetAllLaptops(this.state.currentPage,18,this.state.sort,this.state.tenhang);
       if(Laptops && Laptops.errCode===0){
         this.setState({pageLaptops:Laptops.users,isLoading:true,currentPage:1,tempSearch:""});
       }
@@ -105,10 +108,17 @@ ShowProduct  = (thamchieu) => {
       sort:e.target.value
     },()=>{
       this.Changepage(1)
-
     });
-    
   }
+
+  handleChangeSort_hang  = (e) => {    //Hàm lọc sản phẩm theo giá
+    this.setState({
+      tenhang:e.target.value
+    },()=>{
+      this.Changepage(1)
+    });
+  }
+
   // listProducts  = () => {        //Hàm lọc sản phẩm theo giá
   //   this.setState(state=>{
   //     if(state.sort !== ''){
@@ -125,9 +135,12 @@ ShowProduct  = (thamchieu) => {
 
   Changepage  = async(e) => {
     this.setState({isLoading:false});
-    let Laptops= await GetAllLaptops(e,this.state.view,this.state.sort);
-    if(Laptops && Laptops.errCode===0){
-      this.setState({pageLaptops:Laptops.users,isLoading:true,currentPage:e});
+    let Laptops= await GetAllLaptops(e,this.state.view,this.state.sort,this.state.tenhang);
+    if(Laptops && Laptops.errCode===0 && this.state.tenhang=='all'){
+      this.setState({pageLaptops:Laptops.users,isLoading:true,currentPage:e, total:Laptops.length });
+    }
+    else{
+      this.setState({pageLaptops:Laptops.users,isLoading:true,currentPage:e, total:Laptops.users.length });
     }
 }
 
@@ -141,6 +154,10 @@ ShowProduct  = (thamchieu) => {
             <p><i className="fad fa-laptop Laptop_title_icon"></i> SẢN PHẨM MỚI</p>
           </div>
           <div className="row Laptop_product">
+
+        <Filter_hang 
+        handleChangeSort_hang={this.handleChangeSort_hang}>
+        </Filter_hang>
 
          <Filter
           size={this.state.size} 

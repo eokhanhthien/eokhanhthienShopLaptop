@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Filter extends Component {
     render() {
         return (
-            <div className="col l-7 m-7 c-7 Filter_products">
+            <div className="col l-4 m-4 c-4 Filter_products">
               <span className="Filter_products_texttitle">Giá: </span>  
             <select className="Select_option_filter" 
             onChange={(e) => this.props.handleChangeSort(e)}

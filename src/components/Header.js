@@ -88,7 +88,7 @@ onDelete  = (item) => {
                 {" "}
                 <NavLink  to="/" ><img
                   className="Header_left_img"
-                  src="./image/logo.png"
+                  src="./image/logoeo1.png"
                   alt=""
                 /></NavLink>
               </div>
@@ -125,12 +125,23 @@ onDelete  = (item) => {
               </NavLink>
               <div className="icon_quantity_user" onClick={() => this.onShowModalFavorite()}><i className="fad fa-heart-circle icon_user"></i></div>
 
-              <div className="icon_quantity_user"><i className="fas fa-user-circle icon_user"></i>
+
+
+               {this.props.loginFacebook.length == 0 ?  <div className="icon_quantity_user"><i className="fas fa-user-circle icon_user"></i>
                 <div className="user_option">
                 <NavLink  to="/Login"  className="user_option_item">Đăng nhập <i className="fas fa-sign-in"></i></NavLink>
                     <div className="user_option_item">Đăng ký</div>
                 </div>
-              </div>
+              </div>  : 
+              <div className="img_user_info"><img src={this.props.loginFacebook[0].infoUser.picture}/>
+                <div className="user_info_option">
+                <div><i className="fa fa-user" aria-hidden="true"></i> Tên user: {this.props.loginFacebook[0].infoUser.name}</div>
+                <div><i className="fa fa-envelope" aria-hidden="true"></i>  Mail: {this.props.loginFacebook[0].infoUser.email}</div>
+                </div>
+              </div>}
+
+
+
 
             </div>
           </div>

@@ -10,6 +10,9 @@ export const DELETE_FAVORITE_PRODUCT = "DELETE_FAVORITE_PRODUCT";
 
 export const SHOW_MODAL_FAVORITE = "SHOW_MODAL_FAVORITE";
 
+export const GET_ACC_FACEBOOK = "GET_ACC_FACEBOOK";
+
+
 
 //Bước 1: Tạo ActionType
 //Bước 2: Tạo action 
